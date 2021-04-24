@@ -16,26 +16,25 @@ dateToday.appendChild(document.createTextNode(dateDisplay()))
     
     const imageRandom = document.getElementById("cat-image-container");
 
-    function getRandomImage(){
-      const randomImageApiUrl = "https://thatcopy.pw/catapi/rest/";
+function getRandomImage(){
+  const randomImageApiUrl = "https://thatcopy.pw/catapi/rest/";
+
+  fetch(randomImageApiUrl)
+    .then(function(response){
+      return response.json();
+    })
+    .then(function(object){
+      imageRandom.innerHTML = `<img src="${object.webpurl}">`;
+      
+    })
+    .catch(function(error){
+      console.log(error);
+      
+    });
+}
     
-      fetch(randomImageApiUrl)
-        .then(function(response){
-          return response.json();
-        })
-        .then(function(object){
-          imageRandom.innerHTML = `<img src="${object.webpurl}">`;
-          
-        })
-        .catch(function(error){
-          console.log(error);
-          
-        });
-    }
-        
-    getRandomImage();
+getRandomImage();
 
 const button = document.getElementById("new-image")
-button.addEventListener('click', () => {
-  imageRandom.innerHTML = `<img src="${object.url}">`;
-})
+button.addEventListener('click', getRandomImage);
+ 
