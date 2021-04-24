@@ -8,9 +8,7 @@ body {
     padding: 0 60px;
     margin: auto;
   }
-
-
-     
+    
 h1 {
     font-family:'Times New Roman', Times, serif;
     text-align: center;
@@ -21,3 +19,21 @@ h1 {
     padding-left: 20px; 
 }
 
+p {
+    text-align: center;
+}
+
+#date-display {
+    text-align: center;
+    font-size: 60px;
+}
+
+img {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 600px;
+  width: 500px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
